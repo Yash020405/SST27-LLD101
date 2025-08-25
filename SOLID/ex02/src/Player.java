@@ -1,10 +1,10 @@
 public class Player {
 
-    private final Decoder decoder;
+    private final IDecoder decoder;
     private final IDrawUI drawer;
     private final FrameCache cache;
 
-    public Player(Decoder decoder, IDrawUI drawer, FrameCache cache) {
+    public Player(IDecoder decoder, IDrawUI drawer, FrameCache cache) {
         this.decoder = decoder;
         this.drawer = drawer;
         this.cache = cache;
