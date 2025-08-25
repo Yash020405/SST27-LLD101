@@ -1,5 +1,2 @@
-public class Bird {
-     void fly(){
-         System.out.println("Flap!"); 
-        } 
-    }
+public abstract class Bird implements Movable {
+}
