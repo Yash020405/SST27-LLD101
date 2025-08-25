@@ -2,9 +2,9 @@ public class OrderService {
 
     private final TaxCalculator txCal;
     private final INotifier notifier;
-    private final OrderRepo repo;
+    private final IOrderRepo repo;
 
-    public OrderService(TaxCalculator txCal , INotifier notifier, OrderRepo repo){
+    public OrderService(TaxCalculator txCal , INotifier notifier, IOrderRepo repo){
         this.txCal = txCal;
         this.notifier = notifier;
         this.repo = repo;
