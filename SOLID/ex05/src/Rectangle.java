@@ -1,14 +1,15 @@
-public class Rectangle implements Shape {
-    private int w, h;
+public class Rectangle {
+    private int width, height;
 
-    @Override
-    public void resize(int width, int height) {
-        this.w = width;
-        this.h = height;
+    public void setWidth(int width) {
+        this.width = width;
     }
 
-    @Override
+    public void setHeight(int height){
+        this.height = height;
+    }
+
     public int area() {
-        return w * h;
+        return width * height;
     }
 }

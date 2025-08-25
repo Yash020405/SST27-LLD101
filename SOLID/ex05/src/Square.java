@@ -1,12 +1,10 @@
-public class Square implements Shape {
+public class Square {
     private int side;
 
-    @Override
-    public void resize(int width, int height) {
-        this.side = Math.min(width, height);
+    public void setSide(int side) {
+        this.side = side;
     }
 
-    @Override
     public int area() {
         return side * side;
     }
