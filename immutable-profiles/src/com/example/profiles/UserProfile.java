@@ -1,6 +1,6 @@
 package com.example.profiles;
 
-public class UserProfile {
+public final class UserProfile {
     private final String id;
     private final String email;
     private final String phone;
