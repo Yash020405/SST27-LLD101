@@ -13,31 +13,25 @@ import java.util.Properties;
  *
  * :: Refactored to use Double-Checked Locking with volatile for thread safety.
  */
-public class AppSettings implements Serializable {
-    private static final long serialVersionUID = 1L;
-    private static volatile AppSettings instance; // Volatile ensures visibility across threads
+public class AppSettings {
+    private static volatile AppSettings instance;
     private final Properties props = new Properties();
 
     private AppSettings() {
-        // Prevent reflection-based instantiation
         if (instance != null) {
             throw new IllegalStateException("Instance already created");
         }
     }
 
     public static AppSettings getInstance() {
-        if (instance == null) { // First check (no locking)
+        if (instance == null) {
             synchronized (AppSettings.class) {
-                if (instance == null) { // Second check (with locking)
+                if (instance == null) {
                     instance = new AppSettings();
                 }
             }
         }
         return instance;
-    }
-
-    private Object readResolve() throws ObjectStreamException {
-        return getInstance();
     }
 
     public void loadFromFile(Path file) {
