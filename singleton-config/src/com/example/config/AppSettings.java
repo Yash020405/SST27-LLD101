@@ -11,29 +11,31 @@ import java.util.Properties;
  * not thread-safe, reload allowed anytime, mutable global state,
  * reflection+serialization-friendly.
  *
- * :: Singleton design for thread safety.
+ * :: Refactored to use Double-Checked Locking with volatile for thread safety.
  */
 public class AppSettings implements Serializable {
     private static final long serialVersionUID = 1L;
+    private static volatile AppSettings instance; // Volatile ensures visibility across threads
     private final Properties props = new Properties();
 
-    // Private constructor
     private AppSettings() {
-        if (Holder.INSTANCE != null) {
+        // Prevent reflection-based instantiation
+        if (instance != null) {
             throw new IllegalStateException("Instance already created");
         }
     }
 
-    // Static inner class for lazy-loaded singleton
-    private static class Holder {
-        private static final AppSettings INSTANCE = new AppSettings();
-    }
-
     public static AppSettings getInstance() {
-        return Holder.INSTANCE;
+        if (instance == null) { // First check (no locking)
+            synchronized (AppSettings.class) {
+                if (instance == null) { // Second check (with locking)
+                    instance = new AppSettings();
+                }
+            }
+        }
+        return instance;
     }
 
-    // Ensure deserialization returns the same instance
     private Object readResolve() throws ObjectStreamException {
         return getInstance();
     }
