@@ -1,0 +1,5 @@
+1,john.doe@example.com,John Doe
+2,jane.doe@example.com,Jane Doe
+,invalid.email,No ID
+3,invalid-email,Invalid Email
+4,valid.user@example.com,Valid User
