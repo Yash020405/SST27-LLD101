@@ -10,7 +10,7 @@ public class SharpenAdapter {
 
     public Frame[] applySharpen(Frame[] frames, int strength) {
         String handle = "HANDLE";
-        String newHandle = legacySharpen.applySharpen(handle, strength);
+        handle = legacySharpen.applySharpen(handle, strength);
         return frames;
     }
 }
