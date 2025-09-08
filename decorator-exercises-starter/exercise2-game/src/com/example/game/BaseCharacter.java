@@ -1,5 +1,3 @@
-package com.example.game;
-
 /**
  * Baseline character with default stats and sprite.
  * You will extend behavior by wrapping this object with decorators.
