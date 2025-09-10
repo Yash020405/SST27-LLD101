@@ -1,6 +1,3 @@
-/**
- * Adds extra speed to the wrapped character.
- */
 public class SpeedBoost extends CharacterDecorator {
     private int bonus;
 

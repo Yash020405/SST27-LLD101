@@ -1,8 +1,5 @@
 package com.example.notifications;
 
-/**
- * Concrete decorator that adds Slack sending logic.
- */
 public class SlackDecorator extends NotifierDecorator {
     private final String channel;
 

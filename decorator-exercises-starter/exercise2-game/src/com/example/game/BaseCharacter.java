@@ -1,7 +1,3 @@
-/**
- * Baseline character with default stats and sprite.
- * You will extend behavior by wrapping this object with decorators.
- */
 public class BaseCharacter implements Character {
     private int speed = 5;
     private int damage = 10;

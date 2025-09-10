@@ -1,8 +1,5 @@
 package com.example.notifications;
 
-/**
- * Base decorator that wraps another Notifier.
- */
 public abstract class NotifierDecorator implements Notifier {
     protected final Notifier wrapped;
 

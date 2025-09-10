@@ -1,6 +1,3 @@
-/**
- * Adds extra damage to the wrapped character.
- */
 public class DamageBoost extends CharacterDecorator {
     private int bonus;
 

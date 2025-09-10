@@ -1,7 +1,3 @@
-/**
- * Changes sprite and adds small buffs (speed +1, damage +2).
- * Logs aura effect on actions.
- */
 public class GoldenAura extends CharacterDecorator {
     public GoldenAura(Character inner) {
         super(inner);

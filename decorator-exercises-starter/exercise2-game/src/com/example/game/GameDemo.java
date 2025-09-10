@@ -17,7 +17,7 @@ public class GameDemo {
         shiny.attack();
 
         System.out.println("\n--- Remove GoldenAura (recompose) ---");
-        Character withoutAura = buffed; // simply reuse the chain without GoldenAura
+        Character withoutAura = buffed;
         withoutAura.move();
         withoutAura.attack();
     }

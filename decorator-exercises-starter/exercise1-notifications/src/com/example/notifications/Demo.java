@@ -8,10 +8,8 @@ public class Demo {
     public static void main(String[] args) {
         Notifier base = new EmailNotifier("user@example.com");
 
-        // Baseline behavior (already works)
         base.notify("Baseline email only.");
 
-        // === Decorator Compositions ===
         Notifier emailAndSms = new SmsDecorator(base, "+91-99999-11111");
         emailAndSms.notify("Email + SMS notification.");
 

@@ -1,6 +1,3 @@
-/**
- * Base decorator that wraps another Character.
- */
 public abstract class CharacterDecorator implements Character {
     protected Character inner;
 
